@@ -16,9 +16,14 @@ type BookListProps = {
 };
 
 type Book = {
+    id: number,
     title: string,
-    authors: Array<{ name: string}>,
-    formats: any,
+    authors: {
+        author: {name: string,}
+    },
+    formats: {
+        "image/jpeg": string,
+    }
 };
 
 const BookList = ({link}: ComponenttProps) => {
@@ -32,7 +37,7 @@ const BookList = ({link}: ComponenttProps) => {
     return (
         <div className={styles.list}>
             {bookList.length !== 0 && bookList.map((book: Book) => {
-                return <BookCart title={book.title} autor={book.authors} image=''/>
+                return <BookCart key={book.id} format={book.formats['image/jpeg']} id={book.id} title={book.title} autor={book.authors} image=''/>
             })}
         </div>
     );

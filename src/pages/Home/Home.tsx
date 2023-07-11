@@ -1,7 +1,7 @@
 import React from 'react';
 import BookList from '../../modules/BookList/BookList';
 
-const Home = () => {
+const Home = React.memo(() => {
     return (
         <div>
             <BookList link='?topic=classic'/>
@@ -9,6 +9,6 @@ const Home = () => {
             <BookList link='?languages=es'/>
         </div>
     );
-};
+})
 
 export default Home;

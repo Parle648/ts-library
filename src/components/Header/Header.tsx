@@ -9,6 +9,7 @@ const Header = () => {
             <Logo />
             <Link className={styles.link} to='/mybooks'>My Books</Link>
             <Link className={styles.link} to='/catalog'>Catalog</Link>
+            <input className={styles.searchInput} type="text" placeholder='search what you exaxtly need'/>
         </div>
     );
 };
